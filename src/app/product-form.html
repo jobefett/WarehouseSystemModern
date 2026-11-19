@@ -1,0 +1,52 @@
+<div class="backdrop">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <h2>{{ product() ? 'Edit product' : 'Add product' }}</h2>
+
+    <label>
+      Code
+      <input formControlName="code" placeholder="MYTZ 123456" />
+      @if (form.controls.code.touched && form.controls.code.invalid) {
+        <small class="error"
+          >Use 2-4 uppercase letters, a space and 4-6 digits (e.g. MYTZ 123456).</small
+        >
+      }
+    </label>
+
+    <label>
+      Quantity
+      <input type="number" formControlName="quantity" />
+      @if (form.controls.quantity.touched && form.controls.quantity.invalid) {
+        <small class="error">Quantity must be a whole number, 0 or more.</small>
+      }
+    </label>
+
+    <div class="row">
+      <label>
+        Floor
+        <select formControlName="floor">
+          @for (f of floors; track f) {
+            <option [ngValue]="f">Floor {{ f }}</option>
+          }
+        </select>
+      </label>
+
+      <label>
+        Section
+        <select formControlName="section">
+          @for (s of sections; track s) {
+            <option [ngValue]="s">Section {{ s }}</option>
+          }
+        </select>
+      </label>
+    </div>
+
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+
+    <div class="actions">
+      <button type="button" (click)="cancelled.emit()">Cancel</button>
+      <button type="submit" class="primary" [disabled]="saving()">Save</button>
+    </div>
+  </form>
+</div>

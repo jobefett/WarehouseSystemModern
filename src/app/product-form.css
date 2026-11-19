@@ -1,0 +1,88 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+form {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: system-ui, sans-serif;
+}
+/* form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 420px;
+  margin-bottom: 24px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+} */
+
+h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  font-size: 0.9rem;
+}
+.row {
+  display: flex;
+  gap: 12px;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+input:disabled {
+  background: #f0f0f0;
+  color: #777;
+}
+input.ng-touched.ng-invalid {
+  border-color: #d93025;
+}
+
+button {
+  cursor: pointer;
+}
+button.primary {
+  background: #e8274b;
+  border-color: #e8274b;
+  color: #fff;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  margin: 0;
+  color: #d93025;
+  font-size: 0.8rem;
+}
