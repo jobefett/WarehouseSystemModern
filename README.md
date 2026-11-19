@@ -1,6 +1,15 @@
-# Warehouse2
+# Warehouse
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+
+A simple Angular warehouse management application for adding and editing products, organizing inventory by floor and section, and filtering the product list.
+
+## Features
+
+- View and search warehouse products
+- Add new products
+- Edit existing products
+- Filter products by floor and section
 
 ## Development server
 
