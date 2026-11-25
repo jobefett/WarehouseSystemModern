@@ -135,8 +135,8 @@ describe('ProductForm', () => {
     (fixture.componentInstance as unknown as { submit: () => void }).submit();
 
     const state = fixture.componentInstance as unknown as {
-      error: { (): string };
-      saving: { (): boolean };
+      error: () => string;
+      saving: () => boolean;
     };
 
     expect(state.error()).toBe('Could not add product');
