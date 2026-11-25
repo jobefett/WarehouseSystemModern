@@ -8,6 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:styles": "stylelint \"src/**/*.{css,scss}\"",
+    "lint:styles:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -33,6 +35,8 @@
     "eslint-config-prettier": "^10.1.8",
     "jsdom": "^28.0.0",
     "prettier": "^3.10.1",
+    "stylelint": "^18.1.0",
+    "stylelint-config-standard-scss": "^18.0.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "8.72.2",
     "vitest": "^4.0.8"
