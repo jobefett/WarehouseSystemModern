@@ -30,9 +30,11 @@ describe('ProductForm', () => {
   it('starts with default form values', () => {
     fixture.detectChanges();
 
-    const form = (fixture.componentInstance as unknown as {
-      form: { value: Record<string, unknown> };
-    }).form;
+    const form = (
+      fixture.componentInstance as unknown as {
+        form: { value: Record<string, unknown> };
+      }
+    ).form;
 
     expect(form.value).toEqual({
       code: '',
@@ -45,9 +47,11 @@ describe('ProductForm', () => {
   it('does not submit an invalid form', () => {
     fixture.detectChanges();
 
-    const form = (fixture.componentInstance as unknown as {
-      form: { invalid: boolean; markAllAsTouched: () => void };
-    }).form;
+    const form = (
+      fixture.componentInstance as unknown as {
+        form: { invalid: boolean; markAllAsTouched: () => void };
+      }
+    ).form;
 
     (fixture.componentInstance as unknown as { submit: () => void }).submit();
 
@@ -67,9 +71,11 @@ describe('ProductForm', () => {
 
     fixture.detectChanges();
 
-    const form = (fixture.componentInstance as unknown as {
-      form: { setValue: (value: Product) => void };
-    }).form;
+    const form = (
+      fixture.componentInstance as unknown as {
+        form: { setValue: (value: Product) => void };
+      }
+    ).form;
     form.setValue(product);
 
     const saved = vi.fn();
@@ -92,12 +98,14 @@ describe('ProductForm', () => {
     fixture.componentRef.setInput('product', product);
     fixture.detectChanges();
 
-    const form = (fixture.componentInstance as unknown as {
-      form: {
-        controls: { code: { disabled: boolean; value: string } };
-        value: Record<string, unknown>;
-      };
-    }).form;
+    const form = (
+      fixture.componentInstance as unknown as {
+        form: {
+          controls: { code: { disabled: boolean; value: string } };
+          value: Record<string, unknown>;
+        };
+      }
+    ).form;
 
     expect(form.controls.code.value).toBe(product.code);
     expect(form.controls.code.disabled).toBe(true);
@@ -117,9 +125,11 @@ describe('ProductForm', () => {
 
     fixture.detectChanges();
 
-    const form = (fixture.componentInstance as unknown as {
-      form: { setValue: (value: Product) => void };
-    }).form;
+    const form = (
+      fixture.componentInstance as unknown as {
+        form: { setValue: (value: Product) => void };
+      }
+    ).form;
     form.setValue(product);
 
     (fixture.componentInstance as unknown as { submit: () => void }).submit();
