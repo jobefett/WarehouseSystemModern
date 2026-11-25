@@ -18,6 +18,7 @@ h1 {
   margin: 0;
   font-size: 1.5rem;
 }
+
 h3 {
   margin: 20px 0 6px;
   font-size: 1rem;
@@ -37,6 +38,7 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
 }
+
 .filters input {
   width: 100%;
   box-sizing: border-box;
@@ -46,9 +48,11 @@ h3 {
 .list {
   flex: 1;
 }
+
 .count {
   margin-top: 0;
 }
+
 .empty {
   color: #888;
 }
@@ -71,33 +75,40 @@ button {
   border-radius: 6px;
   background: #fff;
 }
+
 button {
   cursor: pointer;
 }
+
 button:hover {
   background: #f4f4f4;
 }
+
 button.primary {
   background: #e8274b;
   border-color: #e8274b;
   color: #fff;
 }
+
 button.primary:hover {
   background: #c91f3f;
 }
+
 button.link {
   border: none;
   background: none;
   padding: 4px 0 4px 12px;
 }
+
 button.link.active {
   font-weight: 700;
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .layout {
     flex-direction: column;
   }
+
   .filters {
     width: auto;
     border-right: none;
