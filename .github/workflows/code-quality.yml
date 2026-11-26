@@ -22,17 +22,6 @@ jobs:
 
       - run: npm ci
 
-      - name: Unit tests
-        if: ${{ !cancelled() }}
-        run: npm run test:coverage
-
-      - name: Upload coverage report
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v7
-        with:
-          name: unit-test-coverage
-          path: coverage/
-
       - name: Prettier
         run: npm run format:check
 
@@ -43,3 +32,19 @@ jobs:
       - name: Stylelint
         if: ${{ !cancelled() }}
         run: npm run lint:styles
+
+      - name: Unit tests
+        if: ${{ !cancelled() }}
+        run: npm run test:coverage
+
+      - name: Upload coverage report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: unit-test-coverage
+          path: coverage/
+          retention-days: 7
+
+      - name: Build
+        if: ${{ !cancelled() }}
+        run: npm run build
