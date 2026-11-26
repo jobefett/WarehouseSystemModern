@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "warehouse2": {
+    "warehouse": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -55,16 +55,21 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "warehouse2:build:production"
+              "buildTarget": "warehouse:build:production"
             },
             "development": {
-              "buildTarget": "warehouse2:build:development"
+              "buildTarget": "warehouse:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
         "test": {
-          "builder": "@angular/build:unit-test"
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "coverageThresholds": {
+              "lines": 80
+            }
+          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
